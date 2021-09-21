@@ -1,26 +1,25 @@
 import React from "react";
 import { Card, Button } from 'react-bootstrap'
 
-const BookComponent = () => {
+const BookComponent = (props) => {
 
-    const imgUrl = '';
+    const imgUrl = 'https://avatars.githubusercontent.com/u/90153758?s=200&v=4';
 
     return (
 
-        <div>
-            <Card style={{ width: '18rem '}}>
+            <div className="col-lg-3">
+            <Card className="mt-5">
                 <Card.Img variant="top" src={imgUrl} />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>{props.title}</Card.Title>
                     <Card.Text>
-                        Some quick example text tob  uild on the card
-                        make up the bulk of
-                        the card's content.
+                        {props.description}
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Button variant="primary">Apply</Button>
                 </Card.Body>
             </Card>
-        </div>
+            </div>
+        
 
     )
 
