@@ -1,23 +1,27 @@
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 
 function App() {
+  
+  const fullName = 'Ahmad Adil';
+
+  const buttonText = 'Click Me';
+
+  const buttonStyle = {backgroundColor: 'black', color: 'white'};
+  
+  const summation = <p>Hasil dari 5 + 5 adalah {5 + 5}</p>
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h3>Hai {fullName}, lagi belajar ReactJS ya?  Keren!!</h3>
+      <hr/>
+      <label className="label" htmlFor="name">Masukkan nama : </label>
+      <input type="text" id="name" />
+      <button style={buttonStyle}>{buttonText}</button>
+    
+      <hr/>
+      {summation}
+    
     </div>
   );
 }
