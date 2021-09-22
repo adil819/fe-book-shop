@@ -4,6 +4,11 @@ import CounterButton from './CounterButton'
 
 class CounterComponent extends Component {
 
+    constructor(props) {
+        super(props);
+        console.log('Constructor called');
+    }
+
     state = {
         count: 0
     }
@@ -12,18 +17,18 @@ class CounterComponent extends Component {
         this.setState({
             count: this.state.count + newValue
         })
-        // let number;
-        // if(this.state.count==0 && newValue==-1){
-        //     number = 0;
-        // } else {
-        //     number = this.state.count + newValue;
-        // }
-        // this.setState({
-        //     count: number
-        // })
+    }
+
+    componenDidMount() {
+        console.log('ComponentDidMount called');
+    }
+
+    componentDidUpdate() {
+        console.log('ComponentDidUpdate called');
     }
 
     render() {
+        console.log('Render called');
         return (
             <Col className="mt-5">
                 <h3>{this.state.count}</h3>
