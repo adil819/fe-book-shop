@@ -1,11 +1,19 @@
+import Home from "./pages/Home";
+import Footer from "./pages/template/Footer"
+import Navigation from "./pages/template/Navigation";
 import Books from "./components/book/Books"
-import { Container, Row } from "react-bootstrap";
-import CounterComponent from "./components/counter/CounterComponent"
+import Members from "./components/member/Members"
+
 
 const App  = () => {
   return (
-    <Books/>
-    // <CounterComponent/>
+    <>
+      <Navigation />
+      <Home />
+      <Books />
+      <Members />
+      <Footer />
+    </>
   );
 }
 
