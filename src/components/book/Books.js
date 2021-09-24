@@ -11,11 +11,14 @@ export const Books = ({ match}) => {
     const { path } = match
 
     return (
-        <Switch>
-            <Route exact path={path} component={BookList} />
-            <Route exact path={`${path}/add`} component={BookForm} />
-            <Route exact path={`${path}/:id}}`} component={BookDetail} />
-        </Switch>
+        <div>
+            
+        </div>
+        // <Switch>
+        //     <Route exact path={path} component={BookList} />
+        //     <Route exact path={`${path}/add`} component={BookForm} />
+        //     <Route exact path={`${path}/:id}}`} component={BookDetail} />
+        // </Switch>
     )
 }
 

@@ -10,4 +10,10 @@ const getBookById = (id) => {
     return http.get(`${baseUrl}/${id}`)
 }
 
-export { getListBook , getBookById }
+const createBook = (payload) => http.post(`${baseUrl}`, payload);
+
+const updateBook = (id, payload) => http.put(`${baseUrl}/${id}`, payload)
+
+const deleteBook = (id) => http.delete(`${baseUrl}/${id}`)
+
+export { getListBook , getBookById, createBook, updateBook, deleteBook }

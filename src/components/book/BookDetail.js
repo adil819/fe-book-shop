@@ -106,8 +106,12 @@ Penerbit
 </div>
 </div>
 </div>
+
+
 </Col>
+
 </Row>
+
     )
 }
 

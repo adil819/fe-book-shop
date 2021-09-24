@@ -2,24 +2,52 @@ import React, {useState, useEffect} from 'react'
 import BookComponent from "./BookComponents";
 import {books} from "../../api/books";
 import { Link } from 'react-router-dom'
-import { Row, Container } from "react-bootstrap"
-import bookService from "../../api/bookService"
+import { Row, Container, Modal } from "react-bootstrap"
+import bookService, { deleteBook } from "../../api/bookService"
 import { getListBook } from "../../api/bookService"
+import ModalComponent from '../modal/ModalComponent';
 
 const BookList = ({match}) => {
 
   const { path } = match;
   const [books, setBooks] = useState([]);
+  // const [modalShow, setModalShow]
 
   useEffect(() => {
     getListBook()
-      // console.log('Data :', response.data))
+      loadData();
+      // .then((response) => {
+      //   console.log(response.data)
+      //   setBooks(response.data)
+      // })
+  }, [])
+
+  const loadData = () => {
+    getListBook()
       .then((response) => {
+        console.log(response.data)
         setBooks(response.data)
       })
-      
-        
-  }, [])
+  }
+
+  const bookDelete = (id) => {
+    return deleteBook(id) 
+      .then(response => {
+        loadData();
+      })
+  }
+
+  // const handleDeleteTrue = () => {
+  //   if (modalShow.show && modalShow.id){
+  //     bookDelete(modalShow.id)
+  //     setModalShow({
+  //       show:false,
+  //       id:null
+  //     })
+  //   }
+  // }
+
+  
 
     return (    
       <Container>
@@ -35,16 +63,21 @@ const BookList = ({match}) => {
                     description={book.description} 
                     publisher={book.publisher}
                     year={book.year}
-                    page={book.pages}
+                    pages={book.pages}
                     language={book.language}
                     stock={book.stock}
                     price={book.price}
-                    price={book.purchaseAmount}
+                    purchaseAmount={book.purchaseAmount}
                     // image={tmpImage}
                     path={path}
+                    handleDelete={bookDelete}
                     variant="primary"/>
                   )
             }
+            {/* {
+              modalShow.show && {
+                <ModalComponent show={modalShow} handleDeleteTrue={handleDeleteTrue} onHide={()} => setModalShow(false)}
+            } */}
             {
               books && !books.length && <h4>No Book Display</h4>
             }

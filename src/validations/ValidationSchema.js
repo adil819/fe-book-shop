@@ -4,17 +4,17 @@ export const bookSchema = yup.object().shape({
 
     title: yup.string()
         .required('Title is required')
-        .min(6, 'Title must be at least 6 characters'),
+        .min(1, 'Title must be at least 1 characters'),
     description: yup.string()
         .required('Description is required')
-        .min(50, 'Description must be at least 50 characters'),
+        .min(5, 'Description must be at least 5 characters'),
     publisher: yup.string()
         .required('Publisher is required')
         .min(6, 'Publisher must be at least 6 characters'),
-    year: yup.number()
+    year: yup.string()
         .required('Year is required')
-        .min(1500, 'Example : 2004'),
-    page: yup.number()
+        .max(4, 'year must be at max 4 characters'),
+    pages: yup.number()
         .required('Page is required')
         .min(1, 'page must be at least 1 characters'),
     language: yup.string()
@@ -24,6 +24,9 @@ export const bookSchema = yup.object().shape({
         .required('Stock is required')
         .min(0, 'Stock must be at least 0 characters'),
     price: yup.number()
-        .required('Price is required')
-        .min(6, 'Price must be at least  characters')
+        .required('Price is required'),
+        // .min(6, 'Price must be at least  characters')
+    purchaseAmount: yup.number()
+        .required('Purchase amount is required')
+        // .min(6, 'Purchase amount be at least characters')
 })
