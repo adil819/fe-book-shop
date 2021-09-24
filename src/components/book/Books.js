@@ -1,34 +1,34 @@
 import React, {useState} from 'react'
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row, Button } from 'react-bootstrap'
 import BookList from './BookList'
 import BookForm from './BookForm'
+import { BrowserRouter, Switch, Route } from "react-router-dom"
+import { Link } from 'react-router-dom'
 
 export const Books = () => {
 
-    const [getBooks, setBooks] = useState([
-        {
-            id: 1,
-            title: 'Asesmen Pembelajaran Berbasis Komputer Dan Android',
-            description: 'Implementasi Teknologi Informasi dan Komunikasi (TIK) pada lembaga pendidikan saat ini sudah menjadi keharusan, karena penerapan TIK dapat menjadi salah satu indikator keberhasilan suatu institusi pendidikan. Tidak sedikit dosen yang memanfaatkan kemajuan teknologi tersebut.',
-            image: 'https://cdn.gramedia.com/uploads/items/Asesmen_Pembelajaran_Berbasis_Komputer_dan_Android.jpg'
-          }
-    ]);
 
-    const eventCreateBook = (book) => {
-        setBooks(getBooks.concat(book))
-        console.log(getBooks);
-    }
+
+    // const eventCreateBook = (book) => {
+    //     setBooks(getBooks.concat(book))
+    //     console.log(getBooks);
+    // }
 
     return (
-        <Container>
-            <Row>
-                <BookForm/>
-            </Row>
+        <div>
+
+        </div>
+        // <Container>
+        //     <Row>
+        //         <Link to="/add">
+        //             <Button>Add Book</Button>
+        //         </Link>
+        //     </Row>
             
-            <Row>
-                <BookList dataBooks={getBooks}/>
-            </Row>
-        </Container>
+        //     <Row>
+        //         <BookList dataBooks={getBooks}/>
+        //     </Row>
+        // </Container>
     )
 }
 

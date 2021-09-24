@@ -1,19 +1,8 @@
-import Home from "./pages/Home";
-import Footer from "./pages/template/Footer"
-import Navigation from "./pages/template/Navigation";
-import Books from "./components/book/Books"
-import Members from "./components/member/Members"
-
+import Routing from "./pages/Routing"
 
 const App  = () => {
   return (
-    <>
-      <Navigation />
-      <Home />
-      <Books />
-      <Members />
-      <Footer />
-    </>
+    <Routing/>
   );
 }
 
