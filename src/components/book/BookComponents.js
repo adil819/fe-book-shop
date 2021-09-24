@@ -1,7 +1,8 @@
 import React from "react";
-import { Card, Button, Col } from 'react-bootstrap'
+import { Card, Button, ButtonGroup, Col } from 'react-bootstrap'
 import './BookComponent.css'
 import { Link } from 'react-router-dom'
+import { tmpImage } from '../../api/BookApi'
 
 // const BookComponent = ( title, description) => { // kalau gini dibawahnya langsung title gausah props.title
 const BookComponent = (props) => {
@@ -16,7 +17,7 @@ const BookComponent = (props) => {
             <Card className="book-card mt-5 mb-3">
                 {/* <Card.Img variant="top" className="book-img" src={props.image} /> */}
                 <Card.Body className="book-body">
-                    <Card.Title>{props.title}</Card.Title>
+                    <Card.Img variant="top" className="book-img" src={tmpImage} />
                     <Card.Title>{props.title}</Card.Title>
                     <Card.Text>
                         {props.description}
@@ -26,8 +27,16 @@ const BookComponent = (props) => {
                     <Card.Text> Jumlah Halaman : <i>{props.page}</i> </Card.Text>
                     <Card.Text> Bahasa : <i>{props.language}</i> </Card.Text>
                     <Card.Text> Stok : <i>{props.stock}</i> </Card.Text>
-                    <Card.Text> Harga : Rp. <i>{props.price}</i> </Card.Text>
-                    <Link to={`/books/${props.bookId}`} className="btn btn-primary">Detail</Link>
+                    <Card.Text> Harga Beli : Rp. <i>{props.price}</i> </Card.Text>
+                    {/* <Card.Text> Harga Jual : Rp. <i>{props.purchaseAmount}</i> </Card.Text> */}
+                    <div className="d-flex justify-content-between align-items-center">
+                        <ButtonGroup aria-label="Basic example">
+                            <Link to={`/books/${props.bookId}`} className="btn btn-outline-primary">Detail</Link>
+                            <Link to={`/books/edit/${props.bookId}`} className="btn btn-outline-warning">Update</Link>
+                            <Link to={`/books/${props.bookId}`} className="btn btn-outline-danger">Delete</Link>
+                        </ButtonGroup>
+                    {/* <small className="text-muted">Rp. {props.price}</small> */}
+                    </div>
                 </Card.Body>
             </Card>
             

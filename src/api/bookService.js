@@ -6,4 +6,8 @@ const getListBook = () => {
     return http.get(`${baseUrl}`)
 }
 
-export { getListBook }
+const getBookById = (id) => {
+    return http.get(`${baseUrl}/${id}`)
+}
+
+export { getListBook , getBookById }

@@ -79,6 +79,13 @@ const BookForm = (props) => {
                     <div className="invalid-feedback">{errors.price?.message}</div>
                 </Form.Group>
                 
+                <Form.Group className="mb-3" controlId="formaBasicPrice">
+                    <Form.Label>Purchase Amount</Form.Label>
+                    <Form.Control type="integer" placeholder="Enter book purchase amount" name="purchaseAmount" 
+                    {...register("purchaseAmount")} className={`form-control ${errors.v ? 'is-invalid' : ''}`}/>
+                    <div className="invalid-feedback">{errors.purchaseAmount?.message}</div>
+                </Form.Group>
+                
                 </div>                
                 <Button variant="success" type="submit">Save</Button>                
             </Form>

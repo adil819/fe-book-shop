@@ -6,14 +6,17 @@ import { Row, Container } from "react-bootstrap"
 import bookService from "../../api/bookService"
 import { getListBook } from "../../api/bookService"
 
-const BookList = () => {
+const BookList = ({match}) => {
 
+  const { path } = match;
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
     getListBook()
       // console.log('Data :', response.data))
-      .then((response) => setBooks(response.data))
+      .then((response) => {
+        setBooks(response.data)
+      })
       
         
   }, [])
@@ -21,7 +24,7 @@ const BookList = () => {
     return (    
       <Container>
         <h3>Book Page</h3>
-        <Link to="/books/add" className="btn btn-success mb-3 text-uppercase">Add Book</Link>
+        <Link to={`${path}/add`} className="btn btn-success mb-3 text-uppercase">Add Book</Link>
         <Row className="mt-5">
             {
                 books.map(book => 
@@ -36,6 +39,9 @@ const BookList = () => {
                     language={book.language}
                     stock={book.stock}
                     price={book.price}
+                    price={book.purchaseAmount}
+                    // image={tmpImage}
+                    path={path}
                     variant="primary"/>
                   )
             }
