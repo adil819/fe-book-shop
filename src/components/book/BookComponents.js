@@ -17,6 +17,7 @@ const BookComponent = (props) => {
                 {/* <Card.Img variant="top" className="book-img" src={props.image} /> */}
                 <Card.Body className="book-body">
                     <Card.Title>{props.title}</Card.Title>
+                    <Card.Title>{props.title}</Card.Title>
                     <Card.Text>
                         {props.description}
                     </Card.Text>

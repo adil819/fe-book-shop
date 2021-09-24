@@ -1,34 +1,21 @@
 import React, {useState} from 'react'
-import { Container, Row, Button } from 'react-bootstrap'
+// import { Container, Row, Button } from 'react-bootstrap'
 import BookList from './BookList'
 import BookForm from './BookForm'
+import BookDetail from './BookDetail'
 import { BrowserRouter, Switch, Route } from "react-router-dom"
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
-export const Books = () => {
+export const Books = ({ match}) => {
 
-
-
-    // const eventCreateBook = (book) => {
-    //     setBooks(getBooks.concat(book))
-    //     console.log(getBooks);
-    // }
+    const { path } = match
 
     return (
-        <div>
-
-        </div>
-        // <Container>
-        //     <Row>
-        //         <Link to="/add">
-        //             <Button>Add Book</Button>
-        //         </Link>
-        //     </Row>
-            
-        //     <Row>
-        //         <BookList dataBooks={getBooks}/>
-        //     </Row>
-        // </Container>
+        <Switch>
+            <Route exact path={path} component={BookList} />
+            <Route exact path={`${path}/add`} component={BookForm} />
+            <Route exact path={`${path}/:id}}`} component={BookDetail} />
+        </Switch>
     )
 }
 
