@@ -49,7 +49,7 @@ const MemberList = ({match}) => {
     return (    
       <Container>
         <h3>Member Page</h3>
-        <Link to="member/add" className="btn btn-success mb-3 text-uppercase">Add Member</Link>
+        <Link to="members/add" className="btn btn-success mb-3 text-uppercase">Add Member</Link>
         <Row className="mt-5">
             {
                 members.map(member => 
