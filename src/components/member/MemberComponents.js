@@ -30,7 +30,7 @@ const MemberComponent = (props) => {
     
 
     return (
-        
+  
         <Col lg={3} md={6}>
             
             <Card bg="light" className="membercard  mt-5 mb-3" style={{width:"16rem", height:"90%"}}>
@@ -51,9 +51,9 @@ const MemberComponent = (props) => {
                             {/* <Link to={`/members/${props.memberId}`} className="btn btn-outline-primary" style={{marginLeft:10}}>Detail</Link> */}
                             <Link to={`/members/edit/${props.memberId}`} className="btn btn-outline-warning" style={{marginLeft:45}}>Update</Link>
                             {
-                                props.status > 0 || props.status === null ?                                    
+                                props.status == 0 ?                                    
                                     <button onClick={() => props.handleDelete(props.memberId)} className="btn btn-sm btn-outline-danger" disabled={true}>
-                                    Delete
+                                    Unactivate
                                     </button>
                                 :
                                     <button onClick={confirmDelete} className="btn btn-sm btn-outline-danger">
@@ -66,7 +66,6 @@ const MemberComponent = (props) => {
             </Card>
             
         </Col>
-        
     )
 
 }

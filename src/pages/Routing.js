@@ -25,8 +25,8 @@ const Routing = () => {
           <Route path="/books/:id" exact component={BookDetail}/>
           <Route path="/books/edit/:id" exact component={BookForm}/>
           <Route path="/members" exact component={MemberList} />
-          <Route path="/members/add" exact component={MemberForm} />
-          <Route path="/members/edit/:id" exact component={MemberForm}/>
+          {/* <Route path="/members/add" exact component={MemberForm} />
+          <Route path="/members/edit/:id" exact component={MemberForm}/> */}
         </Switch>
         </section>
       <Footer />

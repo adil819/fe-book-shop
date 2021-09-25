@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { Row, Container, Modal } from "react-bootstrap"
 // import memberService, { deleteMember } from "../../api/memberService"
 import memberService from "../../api/memberService"
-import { getListMember } from "../../api/memberService"
+import { getListMember, deleteMember } from "../../api/memberService"
 import ModalComponent from '../modal/ModalComponent';
 
 const MemberList = ({match}) => {
@@ -28,10 +28,10 @@ const MemberList = ({match}) => {
   }
 
   const memberDelete = (id) => {
-    // return deleteMember(id) 
-    //   .then(response => {
-    //     loadData();
-    //   })
+    return deleteMember(id) 
+      .then(response => {
+        loadData();
+      })
   }
 
   const handleDeleteTrue = () => {
