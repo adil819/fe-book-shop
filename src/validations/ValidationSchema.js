@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 
-export const bookSchema = yup.object().shape({
+const bookSchema = yup.object().shape({
 
     title: yup.string()
         .required('Title is required')
@@ -30,3 +30,21 @@ export const bookSchema = yup.object().shape({
         .required('Purchase amount is required')
         // .min(6, 'Purchase amount be at least characters')
 })
+
+const memberSchema = yup.object().shape({
+
+    // title: yup.string()
+    //     .required('Title is required')
+    //     .min(1, 'Title must be at least 1 characters'),
+    // description: yup.string()
+    //     .required('Description is required')
+    //     .min(5, 'Description must be at least 5 characters'),
+    // publisher: yup.string()
+    //     .required('Publisher is required')
+    //     .min(6, 'Publisher must be at least 6 characters'),
+    // year: yup.string()
+    //     .required('Year is required')
+    //     .max(4, 'year must be at max 4 characters')
+})
+
+export { bookSchema, memberSchema }

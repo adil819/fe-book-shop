@@ -49,14 +49,14 @@ const MemberComponent = (props) => {
                     <div className="d-flex justify-content-between align-items-center">
                         <ButtonGroup aria-label="Basic example">
                             {/* <Link to={`/members/${props.memberId}`} className="btn btn-outline-primary" style={{marginLeft:10}}>Detail</Link> */}
-                            <Link to={`/members/edit/${props.memberId}`} className="btn btn-outline-warning" style={{marginLeft:45}}>Update</Link>
+                            {/* <Link to={`/members/edit/${props.memberId}`} className="btn btn-outline-warning" style={{marginLeft:45}}>Update</Link> */}
                             {
                                 props.status == 0 ?                                    
-                                    <button onClick={() => props.handleDelete(props.memberId)} className="btn btn-sm btn-outline-danger" disabled={true}>
+                                    <button onClick={() => props.handleDelete(props.memberId)} className="btn btn-sm btn-outline-danger" style={{marginLeft:70}} disabled={true}>
                                     Unactivate
                                     </button>
                                 :
-                                    <button onClick={confirmDelete} className="btn btn-sm btn-outline-danger">
+                                    <button onClick={confirmDelete} className="btn btn-sm btn-outline-danger" style={{marginLeft:70}}>
                                     Delete
                                     </button>
                             }
